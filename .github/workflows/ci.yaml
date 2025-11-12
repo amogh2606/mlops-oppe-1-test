@@ -131,7 +131,7 @@ jobs:
 
           echo "Initiating rolling update with image: ${IMAGE_PATH}"
           kubectl apply -f deployment.yaml
-          kubectl set image deployment/iris-api-deployment iris-api-container=${IMAGE_PATH}
+          kubectl set image deployment/iris-api-deployment iris-api=${IMAGE_PATH}
           kubectl rollout status deployment/iris-api-deployment --timeout=5m
 
       # --- 4. CML SETUP (FOR THIS JOB) ---
